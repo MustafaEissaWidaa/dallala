@@ -1,0 +1,196 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Dallala colour tokens (spec §4). Light by default; dark follows the
+   system or a `.dark` class on <html>. */
+:root {
+  --sand: #fbf6ee;
+  --surface: #ffffff;
+  --sand-deep: #f2e9db;
+  --line: #e8ddcd;
+  --ink: #231a12;
+  --ink-muted: #6e5f50;
+  --terracotta: #b8431a;
+  --terracotta-press: #9c3812;
+  --terracotta-soft: #fdede4;
+  --on-terracotta: #ffffff;
+  --gum: #e9a23b;
+  --on-gum: #231a12;
+  --gum-soft: #fcefd6;
+  --gum-text: #8a5a0b;
+  --acacia: #1e6b50;
+  --acacia-soft: #ddf0e6;
+  --danger: #b42318;
+  --danger-soft: #fde8e6;
+  --header-ink: #231a12;
+  --on-header-ink: #fbf6ee;
+
+  /* shadcn/ui variables mapped onto the brand tokens */
+  --background: var(--sand);
+  --foreground: var(--ink);
+  --card: var(--surface);
+  --card-foreground: var(--ink);
+  --popover: var(--surface);
+  --popover-foreground: var(--ink);
+  --primary: var(--terracotta);
+  --primary-foreground: var(--on-terracotta);
+  --secondary: var(--sand-deep);
+  --secondary-foreground: var(--ink);
+  --muted: var(--sand-deep);
+  --muted-foreground: var(--ink-muted);
+  --accent: var(--terracotta-soft);
+  --accent-foreground: var(--terracotta);
+  --destructive: var(--danger);
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--terracotta);
+  --chart-1: var(--terracotta);
+  --chart-2: var(--acacia);
+  --chart-3: var(--gum);
+  --chart-4: var(--ink-muted);
+  --chart-5: var(--gum-text);
+  --radius: 14px;
+  --sidebar: var(--header-ink);
+  --sidebar-foreground: var(--on-header-ink);
+  --sidebar-primary: var(--terracotta);
+  --sidebar-primary-foreground: var(--on-terracotta);
+  --sidebar-accent: rgb(255 255 255 / 0.1);
+  --sidebar-accent-foreground: var(--on-header-ink);
+  --sidebar-border: rgb(255 255 255 / 0.1);
+  --sidebar-ring: var(--terracotta);
+}
+
+
+.dark {
+  --sand: #16130f;
+  --surface: #211c17;
+  --sand-deep: #2b241e;
+  --line: #3a3129;
+  --ink: #f5ede2;
+  --ink-muted: #b8a895;
+  --terracotta: #f08a5d;
+  --terracotta-press: #f4a27c;
+  --terracotta-soft: #4a1e0e;
+  --on-terracotta: #16130f;
+  --gum: #f2b85b;
+  --on-gum: #16130f;
+  --gum-soft: #3d2c10;
+  --gum-text: #f2b85b;
+  --acacia: #5cc79a;
+  --acacia-soft: #10301f;
+  --danger: #f97066;
+  --danger-soft: #3f1512;
+  --header-ink: #2b241e;
+  --on-header-ink: #f5ede2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --sand: #16130f;
+    --surface: #211c17;
+    --sand-deep: #2b241e;
+    --line: #3a3129;
+    --ink: #f5ede2;
+    --ink-muted: #b8a895;
+    --terracotta: #f08a5d;
+    --terracotta-press: #f4a27c;
+    --terracotta-soft: #4a1e0e;
+    --on-terracotta: #16130f;
+    --gum: #f2b85b;
+    --on-gum: #16130f;
+    --gum-soft: #3d2c10;
+    --gum-text: #f2b85b;
+    --acacia: #5cc79a;
+    --acacia-soft: #10301f;
+    --danger: #f97066;
+    --danger-soft: #3f1512;
+    --header-ink: #2b241e;
+    --on-header-ink: #f5ede2;
+  }
+}
+
+@theme inline {
+  --color-sand: var(--sand);
+  --color-surface: var(--surface);
+  --color-sand-deep: var(--sand-deep);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-press: var(--terracotta-press);
+  --color-terracotta-soft: var(--terracotta-soft);
+  --color-on-terracotta: var(--on-terracotta);
+  --color-gum: var(--gum);
+  --color-on-gum: var(--on-gum);
+  --color-gum-soft: var(--gum-soft);
+  --color-gum-text: var(--gum-text);
+  --color-acacia: var(--acacia);
+  --color-acacia-soft: var(--acacia-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-header-ink: var(--header-ink);
+  --color-on-header-ink: var(--on-header-ink);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Typography: Readex Pro for headings/numbers, IBM Plex Sans Arabic for UI */
+  --font-sans: var(--font-plex), system-ui, sans-serif;
+  --font-heading: var(--font-readex), var(--font-plex), sans-serif;
+  --font-display: var(--font-readex), var(--font-plex), sans-serif;
+
+  /* Radii (spec §4) */
+  --radius-badge: 8px;
+  --radius-control: 14px;
+  --radius-card: 20px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-3xl: 28px;
+  --radius-4xl: 32px;
+
+  --shadow-card: 0 4px 12px rgb(35 26 18 / 0.06);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
